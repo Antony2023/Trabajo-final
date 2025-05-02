@@ -1,0 +1,355 @@
+:root{
+        --tema-color:white;
+        --primario-color:#124f88;
+        --secundario-color:#f7c331;
+        --texto-color-inverso:white;
+        --texto-color:black;
+        --navbar-shallow-color:#e5e5e5;
+        --menu-mobile-background-color:#3a4460;
+    }
+
+    body{
+        font-family: 'Monserrat' sans-serif;
+        background-color: var(--tema-color);
+        color: var(--tema-color);
+        
+    }
+
+    a{
+        text-decoration: none;
+        color: var(--texto-color);
+    }
+
+    .horizontal-padding{
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+    
+    .vertical-padding{
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    /* Responsive */
+    @media (min-width: 950px){
+        .horizontal-padding{
+            padding-left: 70px;
+            padding-right: 70px;
+        }
+
+        .vertical-padding{
+            padding-top: 70px;
+            padding-bottom: 70px;
+        }
+    }
+
+
+    /* BARRA DE NAVEGACIÓN */
+
+    
+.topheader{
+    position: relative;
+    box-shadow: 0 4px 5px var(--navbar-shallow-color);
+    background-color: var(--tema-color);
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.topnav{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+/* Estilos logo */
+
+.logo{
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--primario-color);
+}
+
+.logo img{
+    border-radius: 50%;
+}
+
+/* Estilos menu */
+
+.menu{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li{
+    padding: 0 15px;
+}
+
+.menu a{
+    color: var(--texto-color);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 100px;
+    text-transform: uppercase;
+
+}
+
+.abrir-menu, 
+.cerrar-menu{
+    display: none;
+}
+
+/* Responsive */
+
+@media(max-width: 950px){
+
+    /* Menu */
+    .menu{
+        flex-direction: column;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        align-items: center;
+        background-color: var(--menu-mobile-background-color);
+        height: 100%;
+        overflow-y: auto;
+
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s;
+    }
+
+    .menu li{
+        padding: 0;
+    }
+
+    .menu a{
+        color: var(--texto-color-inverso);
+        line-height: 60px;
+    }
+
+    .abrir-menu, .cerrar-menu{
+        display: block;
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+
+    .cerrar-menu{
+        align-self: flex-end;
+        padding: 30px 110px;
+        /* tamaño de logo */
+        img{
+            height: 60%;
+            width: 70%;
+        }
+        
+        
+    }
+
+    .abrir-menu{
+        align-items:flex-end;
+        padding: 5px 0px;
+        /* tamaño de logo */
+        img{
+            height: 40%;
+            width: 55%;
+        }
+        
+        
+    }
+
+    .menu_opened{
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .abrir-menu.focus:not(:focus-visible),
+    .cerrar-menu:focus:not(:focus-visible){
+        outline: none;
+    }
+
+}
+    
+    /* FIN BARRA DE NAVEGACIÓN */
+
+    /* CONTACTO */
+    .contacto{
+        background-color: var(--primario-color);
+        color: var(--texto-color-inverso);
+        font-size: 18px;
+        border-radius: 14px;
+        padding: 25px;
+        display: grid;
+        gap: 25px;
+    }
+
+    .contacto p,
+    .contacto h2,
+    .contacto ul{
+        margin: 0;
+        padding: 0;
+    }
+
+    .contacto-titulo{
+        font-size: 30px;
+        font-weight: 500;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .contacto-detalles,
+    .contacto-formulario{
+        display: grid;
+        gap: 20px;
+    }
+
+    .contacto-detalles-grupo,
+    .contacto-formulario-grupo{
+        display: grid;
+        gap: 3;
+    }
+
+    .contacto-label{
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+
+    .contacto-formulario input,
+    .contacto-formulario textarea{
+        border-radius: 7px;
+        border: none;
+        height: 30px;
+        padding: 5px 10px;
+    }
+
+    .contacto-formulario textarea{
+        height: auto;
+        resize: vertical;
+    }
+
+    .boton-contacto-form{
+        width: 100%;
+        height: 50px;
+        background-color: var(--texto-color);
+        border-radius: 7px;
+        color:var(--texto-color-inverso);
+        border: 1px solid var(--tema-color);
+        cursor: pointer;
+    }
+
+    .boton-contacto-form:hover{
+        box-shadow: 0 0 14px var(--secundario-color);
+    }
+
+    
+    .social-list{
+        list-style: none;
+    
+        display: flex;
+        gap: 25px;
+        justify-content: center;
+    }
+    
+    .social-list img{
+        height: 25px;
+    
+    }
+    
+    .social-list img:hover{
+        filter:drop-shadow(0 0 5px var(--secundario-color))
+    }
+
+     /* Resposnsive para pc escritorio */
+    @media(min-width: 950px){
+    .contacto{
+        font-size: 20px;
+        padding: 70px;
+    
+        /* con esto queda centrado en la web */
+        max-width: 980px;
+        margin: 0 auto;
+
+        box-sizing: border-box;
+    }
+    
+    
+    .contacto-titulo{
+        font-size: 35px;
+        text-align: left;
+    }
+        
+    .social-list{
+        list-style: none;
+        justify-content: flex-start;
+    }
+    
+    .social-list img{
+        height: 35px;    
+    }
+    
+    .social-list img:hover{
+        filter:drop-shadow(0 0 5px var(--secundario-color))
+    }
+
+    .contacto-titulo{
+        grid-area: titulo;
+    }
+
+    .contacto-detalles{
+        grid-area: detalles;
+    }
+
+    .contacto-formulario{
+        grid-area: formulario;
+    }
+
+    .social{
+        grid-area: social;
+    }
+
+    .contacto{
+        display: grid;
+        grid:
+        "titulo   formulario" auto
+        "detalles formulario" 1fr
+        "social   formulario" auto/
+        1fr 1fr;
+        align-items: start;
+    }
+}
+
+    /*FIN  CONTACTO */
+
+    .side {
+        flex: 10%;
+        background-color: lightcoral;
+        padding: 20px;
+      }
+      
+      /* Main column */
+      .main {
+        flex: 90%;
+        background-color: lightblue;
+        padding: 20px;
+      }
+      
+      /* Imagen falsa, solo para este ejemplo */
+      .fakeimg {
+        background-color: #aaa;
+        width: 100%;
+        padding: 20px;
+      }
+
+      .footer {
+        padding: 20px;
+        text-align: center;
+        background: lightgreen;
+      }
